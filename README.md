@@ -24,23 +24,23 @@ Both services are deployed in Docker containers and communicate over a custom Do
 - A **shared volume is used to store logs** for monitoring purposes (creative feature).
 
 ## Docker Commands
-docker network create recipe-network
-docker build -t recipe-generator ./recipe-generator
-docker build -t ingredient-analyzer ./ingredient-analyzer
-docker run -d --name recipe-generator --network recipe-network -p 5000:5000 recipe-generator
-docker run -d --name ingredient-analyzer --network recipe-network -p 6000:6000 ingredient-analyzer
-docker logs recipe-generator
-docker logs ingredient-analyzer
-docker tag recipe-generator rooha/recipe-generator:v1
-docker tag ingredient-analyzer rooha/ingredient-analyzer:v1
-docker login
-docker push roha/recipe-generator:v1
-docker push roha/ingredient-analyzer:v1
-docker volume create recipe-logs
-docker run -d --name recipe-generator --network recipe-network -v recipe-logs:/logs -p 5000:5000 recipe-generator
-docker run -d --name ingredient-analyzer --network recipe-network -v recipe-logs:/logs -p 6000:6000 ingredient-analyzer
-docker run -it --rm -v recipe-logs:/logs alpine sh
-cat /logs/recipe.log
+- docker network create recipe-network
+- docker build -t recipe-generator ./recipe-generator
+- docker build -t ingredient-analyzer ./ingredient-analyzer
+- docker run -d --name recipe-generator --network recipe-network -p 5000:5000 recipe-generator
+- docker run -d --name ingredient-analyzer --network recipe-network -p 6000:6000 ingredient-analyzer
+- docker logs recipe-generator
+- docker logs ingredient-analyzer
+- docker tag recipe-generator rooha/recipe-generator:v1
+- docker tag ingredient-analyzer rooha/ingredient-analyzer:v1
+- docker login
+- docker push roha/recipe-generator:v1
+- docker push roha/ingredient-analyzer:v1
+- docker volume create recipe-logs
+- docker run -d --name recipe-generator --network recipe-network -v recipe-logs:/logs -p 5000:5000 recipe-generator
+- docker run -d --name ingredient-analyzer --network recipe-network -v recipe-logs:/logs -p 6000:6000 ingredient-analyzer
+- docker run -it --rm -v recipe-logs:/logs alpine sh
+- cat /logs/recipe.log
 
 ## Working
 ### Logs

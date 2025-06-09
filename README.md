@@ -51,8 +51,8 @@ Both services are deployed in Docker containers and communicate over a custom Do
 ![image](https://github.com/user-attachments/assets/8bc06979-21ee-4f90-9fed-de846d00502a)
 
 ## Docker Hub Links
-https://hub.docker.com/r/rooha/recipe-generator/tags
-https://hub.docker.com/r/rooha/ingredient-analyzer/tags
+- https://hub.docker.com/r/rooha/recipe-generator/tags
+- https://hub.docker.com/r/rooha/ingredient-analyzer/tags
 
 ## Creative Feature
 To demonstrate Docker’s power in managing data persistence and inter-service coordination, we implemented a creative feature where both microservices — recipe-generator and ingredient-analyzer — log their activity into a shared volume. This allows centralized log access, monitoring, and debugging, even though both services are running in isolated containers.

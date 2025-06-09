@@ -24,8 +24,11 @@ Both services are deployed in Docker containers and communicate over a custom Do
 - A **shared volume is used to store logs** for monitoring purposes (creative feature).
 
 ## Working
+### Logs
 ![image](https://github.com/user-attachments/assets/88db95ff-6e80-45d9-8c6c-2fbd7b48604d)
+### Recipe Generator
 ![image](https://github.com/user-attachments/assets/8d6fdb98-3edb-4321-ab28-80083fd7780f)
+### Ingredient Analyzer
 ![image](https://github.com/user-attachments/assets/8bc06979-21ee-4f90-9fed-de846d00502a)
 
-## Unique
+## Creative Feature

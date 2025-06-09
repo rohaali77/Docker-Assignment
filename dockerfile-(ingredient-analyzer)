@@ -1,0 +1,7 @@
+FROM python:3.9
+WORKDIR /app
+COPY analyzer.py .
+RUN pip install flask
+CMD ["python", "analyzer.py"]
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s CMD curl --fail http://localhost:6000/analyze || exit 1

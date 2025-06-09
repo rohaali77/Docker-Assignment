@@ -1,0 +1,6 @@
+I was inspired by food and cooking apps and thought of combining two microservices: one that gives a recipe and one that analyzes its ingredients for health.
+I wanted the app to be simple yet creative by going beyond basic CRUD apps.
+One of the main challenges I faced was running the services without Docker Compose and making them talk to each other over a Docker network.
+I overcame this by creating a custom Docker network and using internal container names.
+Docker features like networking, volumes, and health checks made the development process very smooth. Using a shared volume for logs was very powerful to monitor both services from one place.
+In a production setup, I would improve the app by adding a UI and integrating a database to store recipes and analysis history. I would also add a load balancer and auto-scaling for the services.

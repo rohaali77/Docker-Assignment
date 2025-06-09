@@ -23,6 +23,8 @@ Both services are deployed in Docker containers and communicate over a custom Do
 - A **custom Docker network** is created to allow services to communicate.
 - A **shared volume is used to store logs** for monitoring purposes (creative feature).
 
+## Docker Commands
+
 ## Working
 ### Logs
 ![image](https://github.com/user-attachments/assets/88db95ff-6e80-45d9-8c6c-2fbd7b48604d)

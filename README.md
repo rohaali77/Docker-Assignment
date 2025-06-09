@@ -24,6 +24,23 @@ Both services are deployed in Docker containers and communicate over a custom Do
 - A **shared volume is used to store logs** for monitoring purposes (creative feature).
 
 ## Docker Commands
+docker network create recipe-network
+docker build -t recipe-generator ./recipe-generator
+docker build -t ingredient-analyzer ./ingredient-analyzer
+docker run -d --name recipe-generator --network recipe-network -p 5000:5000 recipe-generator
+docker run -d --name ingredient-analyzer --network recipe-network -p 6000:6000 ingredient-analyzer
+docker logs recipe-generator
+docker logs ingredient-analyzer
+docker tag recipe-generator rooha/recipe-generator:v1
+docker tag ingredient-analyzer rooha/ingredient-analyzer:v1
+docker login
+docker push roha/recipe-generator:v1
+docker push roha/ingredient-analyzer:v1
+docker volume create recipe-logs
+docker run -d --name recipe-generator --network recipe-network -v recipe-logs:/logs -p 5000:5000 recipe-generator
+docker run -d --name ingredient-analyzer --network recipe-network -v recipe-logs:/logs -p 6000:6000 ingredient-analyzer
+docker run -it --rm -v recipe-logs:/logs alpine sh
+cat /logs/recipe.log
 
 ## Working
 ### Logs
@@ -34,3 +51,6 @@ Both services are deployed in Docker containers and communicate over a custom Do
 ![image](https://github.com/user-attachments/assets/8bc06979-21ee-4f90-9fed-de846d00502a)
 
 ## Creative Feature
+To demonstrate Docker’s power in managing data persistence and inter-service coordination, we implemented a creative feature where both microservices — recipe-generator and ingredient-analyzer — log their activity into a shared volume. This allows centralized log access, monitoring, and debugging, even though both services are running in isolated containers.
+### Screenshots
+![image](https://github.com/user-attachments/assets/c80266ab-980a-43f0-912b-1ebd8faccaa4)

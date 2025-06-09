@@ -8,11 +8,7 @@ The application is made of two services:
 - **Ingredient Analyzer Service**: Accepts a list of ingredients and analyzes whether they are healthy.
 
 ## Microservices Architecture
-[User (Browser/Postman)]
-       |
-       | GET /recipe
-       V
-[Recipe Generator (Flask)] ----> Sends ingredients ----> [Ingredient Analyzer (Flask)]
+[User (Browser/Postman)] ---> GET/recipe ---> [Recipe Generator (Flask)] ----> Sends ingredients ----> [Ingredient Analyzer (Flask)]
 
 Both services are deployed in Docker containers and communicate over a custom Docker network.
 
